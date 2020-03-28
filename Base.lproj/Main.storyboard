@@ -16,22 +16,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Ho9-a2-5f7" customClass="PlayingCardView" customModule="PlayingCards" customModuleProvider="target">
-                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <rect key="frame" x="20" y="154" width="374" height="598"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ho9-a2-5f7" secondAttribute="height" multiplier="5:8" id="ASk-iO-gPn"/>
+                                    <constraint firstAttribute="width" priority="250" constant="800" id="GzG-RO-Can"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rank">
+                                        <integer key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="lJ1-Hm-JYh" appends="YES" id="vOv-xl-aFc"/>
+                                </connections>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ho9-a2-5f7" secondAttribute="trailing" constant="20" id="1qi-9S-Yyq"/>
-                            <constraint firstItem="Ho9-a2-5f7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3so-kl-XF3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ho9-a2-5f7" secondAttribute="trailing" constant="20" id="VUX-f3-ilX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ho9-a2-5f7" secondAttribute="bottom" id="tew-X4-5Ky"/>
-                            <constraint firstItem="Ho9-a2-5f7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="uzs-Ch-MSF"/>
+                            <constraint firstItem="Ho9-a2-5f7" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="3so-kl-XF3"/>
+                            <constraint firstItem="Ho9-a2-5f7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="IIj-5C-beQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ho9-a2-5f7" secondAttribute="trailing" constant="20" id="VUX-f3-ilX"/>
+                            <constraint firstItem="Ho9-a2-5f7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="e2F-ck-BL8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ho9-a2-5f7" secondAttribute="bottom" constant="20" id="tew-X4-5Ky"/>
+                            <constraint firstItem="Ho9-a2-5f7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="uzs-Ch-MSF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="playingCardView" destination="Ho9-a2-5f7" id="K1R-VG-Cu6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="lJ1-Hm-JYh">
+                    <connections>
+                        <action selector="flipCard:" destination="BYZ-38-t0r" id="yh2-5k-QLP"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
         </scene>
